@@ -3,6 +3,7 @@
 
 import sys #Biblioteca Python utilizada para a finalização do programa
 x_o = "X"
+
 jorge = 2 #Variável utilizada na marcação das casase na alternancia das jogadas 
 c1 = ('1')#
 c2 = ('2')#
@@ -13,13 +14,16 @@ c6 = ('6')# e altera-los futuramente através das jogadas dos users
 c7 = ('7')#
 c8 = ('8')#
 c9 = ('9')#
+
 #Função que define o formato e as casa do Tabuleiro
+
 def tabuleiro():
     print(c1 ,"  |  ", c2  ,"  |  ", c3)
     print(c4 ,"  |  ", c5  ,"  |  ", c6)
     print(c7 ,"  |  ", c8  ,"  |  ", c9)
     
 #Menu de Início 
+
 menu=input("Você deseja Continuar [C] ou Sair[S]? ").upper()
 if menu=='S':
     sys.exit()
@@ -33,6 +37,7 @@ while menu!="C" and menu!="S":
         pass
             
 #Loop que vai definir se é a jogada de [X] ou [O]
+
 tabuleiro()
 while True:
     if jorge % 2 == 0: x_o ='X'
@@ -40,7 +45,9 @@ while True:
 
     print("Agora é a vez de",x_o) 
     jogada = str(input())
+    
 #Verifica se o número digitado pelo usuário é válido
+    
     while jogada.isnumeric() == False:
         jogada= str(input("Por favor coloque um número válido:"))
     while int(jogada)>=10 or int(jogada) <= 0:
@@ -48,6 +55,7 @@ while True:
     jogada = int(jogada)
 #Estrutura de decisão que define qual casa será preenchida com [X] ou [O],
 #onde também verifica se a casa ja esta preenchida(fazendo o jogador perder a vez) ou vazia
+
     if jorge % 2 == 0: x_o ='X'
 
     else:x_o= "O"
@@ -89,6 +97,7 @@ while True:
     tabuleiro()
     
     #Estrutura de decisão que permite o analisar e printar quem foi ou Vencedor ou se deu Velha
+    
     if c1 == 'X' and c2 == 'X' and c3 == 'X':
         print ('O Jogador [X] VENCEU!!')
         break
@@ -140,6 +149,7 @@ while True:
     elif jorge == 9:
         print('DEU VELHA!!')
         break
+        
 #Input colocado para que os usuários consigam visualizar as mensagens de Vencer/Deu Velha no Prompt de Comando
 a= input("Digite qualquer coisa para sair:")
             
